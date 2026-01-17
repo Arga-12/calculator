@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Gandul's Calculator</title>
+</head>
+<body>
+    
+
+    <!-- <div class="text-center mt-5 bg-black-500">
+        <input class="p-3 rounded-full bg-blue-500" value="" id="Bil_1" placeholder="bilangan1">
+        <select class="border-1 p-3 rounded-full" id="Operasi">
+            <option value="tambah">+</option>
+            <option value="kurang">-</option>
+            <option value="kali">*</option>
+            <option value="bagi">/</option>
+            <option value="mod">%</option>
+        </select>
+        <input class="p-3 rounded-full bg-blue-500" value="" id="Bil_2" placeholder="bilangan2">
+        <p class="mt-2 font-semibold p-2" id="print"></p>
+        <button id="btnHitung" class="rounded-full p-3 mt-4 bg-red-300">Tampilkan!</button>
+    </div> -->
+    
+    
+    <div class="min-h-screen flex items-center justify-center gap-56">
+
+        <div  class="wei flex-col w-80 h-80 hidden">
+            <div class="tenor-gif-embed" data-postid="9505604740773414587" data-share-method="host" data-aspect-ratio="1.04265" data-width="100%"><a href="https://tenor.com/view/uma-musume-daitaku-daitaku-helios-wei-gif-9505604740773414587">Uma Musume Daitaku GIF</a>from <a href="https://tenor.com/search/uma+musume-gifs">Uma Musume GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <h1 class="items-center mb-3 flex font-bold uppercase justify-center">Gandul's Calculator</h1>
+            <div class="w-[450px] bg-gray-300 rounded-3xl shadow-2xl p-4">
+
+                <!-- discplay calcnya -->
+                <div class="h-20 bg-black rounded-full text-white flex justify-between relative items-center px-4 text-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1.5 p-1 h-15 shrink-0" viewBox="0 0 512 512"><path fill="#fff" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0m149.3 341.3c0 11.8-9.5 21.3-21.3 21.3H128c-11.8 0-21.3-9.6-21.3-21.3v-42.7c0-11.8 9.5-21.3 21.3-21.3h256c11.8 0 21.3 9.6 21.3 21.3zm0-128c0 11.8-9.5 21.3-21.3 21.3H128c-11.8 0-21.3-9.6-21.3-21.3v-42.7c0-11.8 9.5-21.3 21.3-21.3h256c11.8 0 21.3 9.6 21.3 21.3z"/></svg>
+                    <input type="text" value="" id="print" placeholder="0" readonly class="w-full mr-2 font-mono text-right outline-none bg-transparent">
+                </div>
+
+                <div class="grid grid-cols-4 mt-4 gap-3">
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">7</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">8</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">9</button>
+                    <button class="h-14 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">÷</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">4</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">5</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">6</button>
+                    <button class="h-14 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">×</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">1</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">2</button>
+                    <button class="h-14 keyCalc rounded-full bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">3</button>
+                    <button class="h-14 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">-</button>
+                    <button class="h-14 keyCalc rounded-full col-span-2 bg-gray-200 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">0</button>
+                    <button class="h-14 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">.</button>
+                    <button class="h-14 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">+</button>
+                    <button class="h-14 col-span-2 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">AC</button>
+                    <button class="h-14 col-span-2 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]"><span class="hidden">Hapus</span><svg xmlns="http://www.w3.org/2000/svg" class=" h-10 shrink-0" viewBox="0 0 24 24"><path fill="currentColor" d="m14 13.4l1.9 1.9q.275.275.7.275t.7-.275t.275-.7t-.275-.7L15.4 12l1.9-1.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275L14 10.6l-1.9-1.9q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7l1.9 1.9l-1.9 1.9q-.275.275-.275.7t.275.7t.7.275t.7-.275zM9 20q-.475 0-.9-.213t-.7-.587l-4.5-6q-.4-.525-.4-1.2t.4-1.2l4.5-6q.275-.375.7-.587T9 4h11q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20z"/></svg></button>
+                    <button class="h-14 col-span-4 keyCalc rounded-full bg-[#a1b2bf]/100 text-xl flex items-center font-semibold justify-center select-none transition duration-150 hover:bg-[#323b70]/80 hover:text-[#a3c246]">Hitung!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wei flex-col w-80 h-80 hidden">
+            <div class="tenor-gif-embed" data-postid="9505604740773414587" data-share-method="host" data-aspect-ratio="1.04265" data-width="100%"><a href="https://tenor.com/view/uma-musume-daitaku-daitaku-helios-wei-gif-9505604740773414587">Uma Musume Daitaku GIF</a>from <a href="https://tenor.com/search/uma+musume-gifs">Uma Musume GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>
