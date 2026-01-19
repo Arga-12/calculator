@@ -12,8 +12,15 @@ keys.forEach(tombol => {
         }
         else if (isiKey === "Hitung!") { 
             try {
-                let rumus = print.value.replace(/×/g, '*').replace(/÷/g, '/')
-                print.value = eval(rumus)
+                let input = print.value;
+                let rumus = input.replace(/[^0-9+\-*/.()]/g, '');
+                rumus = rumus.replace(/×/g, '*').replace(/÷/g, '/');
+
+                if(rumus === '') {
+                    print.value = "0";
+                } else {
+                    print.value = eval(rumus);
+                }
             } catch (e) {
                 print.value = "WEIIIII";
             };
