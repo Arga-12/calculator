@@ -67,7 +67,7 @@ keys.forEach(tombol => {
 // WEIIII
 const h = document.querySelectorAll(".wei");
 const wei = new Audio('uma/wei.mp3')
-wei.volume = 0.5
+wei.volume = 0.3
 wei.loop = true;
 
 const kagi = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
