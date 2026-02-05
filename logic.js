@@ -13,16 +13,19 @@ keys.forEach(tombol => {
         else if (isiKey === "Hitung!") { 
             try {
                 let input = print.value;
-                let rumus = input.replace(/[^0-9+\-*/.()]/g, '');
-                rumus = rumus.replace(/×/g, '*').replace(/÷/g, '/');
+                let rumus = input.replace(/×/g, '*').replace(/÷/g, '/');
+                rumus = rumus.replace(/[^0-9+\-*/.()]/g, '');
 
                 if(rumus === '') {
                     print.value = "0";
                 } else {
-                    print.value = eval(rumus);
+                    let hasil = eval(rumus);
+                    History(input, hasil);
+                    print.value = hasil;
                 }
             } catch (e) {
                 print.value = "WEIIIII";
+                console.error(e);
             };
         } else { 
             const op = ['+', '-', '÷', '×', '.'];
@@ -42,6 +45,44 @@ keys.forEach(tombol => {
     })
 });
 
+//history func
+function History(rumus, hasil) {
+    let LiHistory = JSON.parse(localStorage.getItem("history")) || [];
+    
+    const data = {
+        ekspresi: rumus,
+        hasil: hasil,
+        date: new Date().toLocaleString()
+    };
+
+     LiHistory.unshift(data);
+     LiHistory = LiHistory.slice(0, 10);
+     localStorage.setItem("history", JSON.stringify(LiHistory));
+
+     console.log("Histori dibuat:", LiHistory);
+     renderHistory();
+};
+
+function renderHistory() {
+    const historyList = document.getElementById("historyList");
+    const LiHistory = JSON.parse(localStorage.getItem("history")) || [];
+
+    if (LiHistory.length === 0) {
+        historyList.innerHTML = "<p class='text-center text-gray-500'>Tidak ada history</p>";
+        return;
+    };
+
+    historyList.innerHTML = LiHistory.map((item, index) => `
+        <div class="flex items-center justify-between p-2 border-b border-gray-200">
+            <p>${index + 1}. ${item.ekspresi} = ${item.hasil}</p>
+            <p class="text-gray-500 text-sm">${item.date}</p>
+        </div>
+    `).join('');
+};
+
+function tampilHistory(rumus) {
+    print.value = rumus;
+};
 // tombol.addEventListener('click', () => {
 //     const a1 = Number(bil_1.value);
 //     const a2 = Number(bil_2.value);
